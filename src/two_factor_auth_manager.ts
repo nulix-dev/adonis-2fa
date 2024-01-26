@@ -27,4 +27,8 @@ export class TwoFactorAuthManager {
 
     return verifyResult.delta === 0 // Valida token atual, não permitindo token já expirado ou token futuro
   }
+
+  generateToken(secret: string) {
+    return twoFactor.generateToken(secret)
+  }
 }
