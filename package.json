@@ -8,8 +8,11 @@
   "type": "module",
   "files": [
     "build/src",
+    "build/services",
     "build/providers",
     "build/stubs",
+    "build/configure.js",
+    "build/configure.d.ts",
     "build/index.d.ts",
     "build/index.js"
   ],
