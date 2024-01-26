@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
-  "description": "",
-  "version": "0.0.0",
+  "name": "@nulix/adonis-2fa",
+  "description": "A Two Factor Authentication Helper for AdonisJS",
+  "version": "0.1.0",
   "engines": {
     "node": ">=18.16.0"
   },
@@ -15,7 +15,9 @@
   ],
   "exports": {
     ".": "./build/index.js",
-    "./types": "./build/src/types.js"
+    "./types": "./build/src/types.js",
+    "./two_factor_auth_provider": "./build/providers/two_factor_auth_provider.js",
+    "./services/main": "./build/services/two_factor_auth.js"
   },
   "scripts": {
     "clean": "del-cli build",
@@ -33,8 +35,12 @@
     "version": "npm run build",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "adonisjs",
+    "2fa",
+    "adonis"
+  ],
+  "author": "brunolipe-a, nulix",
   "license": "MIT",
   "devDependencies": {
     "@adonisjs/assembler": "^7.0.0",
@@ -80,5 +86,8 @@
   "eslintConfig": {
     "extends": "@adonisjs/eslint-config/package"
   },
-  "prettier": "@adonisjs/prettier-config"
+  "prettier": "@adonisjs/prettier-config",
+  "dependencies": {
+    "node-2fa": "^2.0.3"
+  }
 }
