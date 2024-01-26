@@ -10,8 +10,8 @@ Two Factor Authentication using `node-2fa` integration for AdonisJS.
 ## License
 AdonisJS 2FA is open-sourced software licensed under the [MIT license](LICENSE.md).
 
-[gh-workflow-image]: https://img.shields.io/github/actions/workflow/status/nulix-dev/adonis-2fa/checks.yml?style=for-the-badge
-[gh-workflow-url]: https://github.com/nulix-dev/adonis-2fa/actions/workflows/checks.yml "Github action"
+[gh-workflow-image]: https://img.shields.io/github/actions/workflow/status/nulix-dev/adonis-2fa/test.yml?style=for-the-badge
+[gh-workflow-url]: https://github.com/nulix-dev/adonis-2fa/actions/workflows/test.yml "Github action"
 
 [npm-image]: https://img.shields.io/npm/v/@nulix/adonis-2fa/latest.svg?style=for-the-badge&logo=npm
 [npm-url]: https://www.npmjs.com/package/@nulix/adonis-2fa/v/latest "npm"
