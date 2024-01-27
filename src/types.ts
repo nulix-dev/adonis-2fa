@@ -5,6 +5,9 @@ export type ResolvedTwoFactorAuthConfig = {
   issuer: string
 }
 
+/**
+ * `Secret` generated from `generateSecret` method
+ */
 export type TwoFactorSecret = {
   secret: string
   uri: string
