@@ -1,0 +1,12 @@
+{{{
+  exports({
+    to: app.validatorsPath('verify_otp.ts')
+  })
+}}}
+import vine from '@vinejs/vine'
+
+export const verifyOtpValidator = vine.compile(
+  vine.object({
+    otp: vine.string(),
+  })
+)

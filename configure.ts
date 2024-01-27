@@ -40,6 +40,30 @@ export async function configure(command: ConfigureCommand) {
     })
   }
 
+  const shouldMakeController = await command.prompt.confirm(
+    'Do you want to create controller and routes for a basic 2FA flow?',
+    {
+      default: false,
+      hint: 'You should be using @adonisjs/auth',
+    }
+  )
+
+  if (shouldMakeController) {
+    const controllerFileName = await command.prompt.ask('Enter controller name: ', {
+      default: 'two_factor_auth_controller',
+    })
+
+    await codemods.makeUsingStub(stubsRoot, 'make/controller/two_factor_controller.stub', {
+      controllerFileName,
+    })
+
+    await codemods.makeUsingStub(stubsRoot, 'make/route/2fa.stub', {
+      controllerFileName,
+    })
+
+    await codemods.makeUsingStub(stubsRoot, 'make/validation/verify_otp.stub', {})
+  }
+
   /**
    * Publish config file
    */
