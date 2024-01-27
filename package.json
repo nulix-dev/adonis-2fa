@@ -83,11 +83,15 @@
       "html"
     ],
     "exclude": [
-      "tests/**"
+      "tests/**",
+      "docs/**"
     ]
   },
   "eslintConfig": {
-    "extends": "@adonisjs/eslint-config/package"
+    "extends": "@adonisjs/eslint-config/package",
+    "ignorePatterns": [
+      "docs/"
+    ]
   },
   "prettier": "@adonisjs/prettier-config",
   "dependencies": {

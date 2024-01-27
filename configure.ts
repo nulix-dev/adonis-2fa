@@ -41,7 +41,7 @@ export async function configure(command: ConfigureCommand) {
   }
 
   const shouldMakeController = await command.prompt.confirm(
-    'Do you want to create controller and routes for a basic 2FA flow?',
+    'Do you want to create controller and routes for a basic 2FA flow (API)?',
     {
       default: false,
       hint: 'You should be using @adonisjs/auth',

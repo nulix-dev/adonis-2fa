@@ -8,7 +8,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 import { verifyOtpValidator } from '#validators/verify_otp'
 
-export default class TwoFactorsController {
+export default class TwoFactorAuthController {
   async generate({ auth }: HttpContext) {
     const user = auth.user!
 
