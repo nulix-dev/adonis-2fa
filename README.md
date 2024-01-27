@@ -10,7 +10,7 @@ Two Factor Authentication using `node-2fa` integration for AdonisJS.
 
 ## Documentation
 
-See documentation at [nulix.adonis-2fa.vercel.app](https://nulix.adonis-2fa.vercel.app)
+See documentation at [adonis-2fa.netlify.app](https://adonis-2fa.netlify.app)
 
 ## License
 
