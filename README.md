@@ -5,9 +5,15 @@
 [![gh-workflow-image]][gh-workflow-url] [![npm-image]][npm-url] ![][typescript-image] [![license-image]][license-url]
 
 ## Introduction
+
 Two Factor Authentication using `node-2fa` integration for AdonisJS.
 
+## Documentation
+
+See documentation at [nulix.adonis-2fa.vercel.app](https://nulix.adonis-2fa.vercel.app)
+
 ## License
+
 AdonisJS 2FA is open-sourced software licensed under the [MIT license](LICENSE.md).
 
 [gh-workflow-image]: https://img.shields.io/github/actions/workflow/status/nulix-dev/adonis-2fa/test.yml?style=for-the-badge
