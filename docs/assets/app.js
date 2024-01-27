@@ -1,4 +1,5 @@
 import 'unpoly'
+
 import Alpine from 'alpinejs'
 import mediumZoom from 'medium-zoom'
 import docsearch from '@docsearch/js'
@@ -10,7 +11,12 @@ import {
   initSearchComponent,
 } from '@dimerapp/docs-theme/scripts'
 
-import.meta.glob(['../content/**/*.png', '../content/**/*.jpeg', '../content/**/*.jpg'])
+import.meta.glob([
+  '../content/**/*.png',
+  '../content/**/*.jpeg',
+  '../content/**/*.jpg',
+  '../content/**/*.webp',
+])
 
 Alpine.plugin(tabs)
 Alpine.plugin(Persist)

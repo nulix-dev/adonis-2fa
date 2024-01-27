@@ -4,5 +4,41 @@
     "title": "Introduction",
     "contentPath": "./introduction.md",
     "category": "Guides"
+  },
+  {
+    "permalink": "usage",
+    "title": "Usage",
+    "contentPath": "./usage.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "lucid/migration",
+    "title": "Migration",
+    "contentPath": "./lucid/migration.md",
+    "category": "Lucid Integration"
+  },
+  {
+    "permalink": "lucid/model",
+    "title": "Model",
+    "contentPath": "./lucid/model.md",
+    "category": "Lucid Integration"
+  },
+  {
+    "permalink": "basic-flow/routes",
+    "title": "Routes",
+    "contentPath": "./basic_flow/routes.md",
+    "category": "Basic Flow"
+  },
+  {
+    "permalink": "basic-flow/validation",
+    "title": "Validation",
+    "contentPath": "./basic_flow/validation.md",
+    "category": "Basic Flow"
+  },
+  {
+    "permalink": "basic-flow/controller",
+    "title": "Controller",
+    "contentPath": "./basic_flow/controller.md",
+    "category": "Basic Flow"
   }
 ]

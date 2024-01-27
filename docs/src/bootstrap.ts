@@ -11,10 +11,10 @@
 import edge from 'edge.js'
 import uiKit from 'edge-uikit'
 import collect from 'collect.js'
-import { dimer } from '@dimerapp/edge'
 import { readFile } from 'node:fs/promises'
-import { RenderingPipeline } from '@dimerapp/edge'
-import { Collection, Renderer } from '@dimerapp/content'
+import { Renderer } from '@dimerapp/content'
+import type { Collection } from '@dimerapp/content'
+import { dimer, RenderingPipeline } from '@dimerapp/edge'
 import { docsHook, docsTheme } from '@dimerapp/docs-theme'
 
 import grammars from '../vscode_grammars/main.js'
@@ -29,14 +29,14 @@ edge.use(uiKit)
  * Globally loads the config file
  */
 edge.global('getConfig', async () =>
-  JSON.parse(await readFile(new URL('../content/config.json', import.meta.url), 'utf-8'))
+  JSON.parse(await readFile(new URL('../content/config.json', import.meta.url), 'utf-8')),
 )
 
 /**
  * Globally loads the sponsors file
  */
 edge.global('getSponsors', async () =>
-  JSON.parse(await readFile(new URL('../content/sponsors.json', import.meta.url), 'utf-8'))
+  JSON.parse(await readFile(new URL('../content/sponsors.json', import.meta.url), 'utf-8')),
 )
 
 /**
