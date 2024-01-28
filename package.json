@@ -28,9 +28,9 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "quick:test": "node --import=./tsnode.esm.js --enable-source-maps bin/test.ts",
-    "pretest": "npm run lint",
-    "test": "c8 npm run quick:test",
+    "test": "node --import=./tsnode.esm.js --enable-source-maps bin/test.ts",
+    "prec8:test": "npm run lint",
+    "c8:test": "c8 npm run test",
     "prebuild": "npm run lint && npm run clean",
     "build": "tsc",
     "postbuild": "npm run copy:templates",
@@ -82,9 +82,10 @@
       "text",
       "html"
     ],
-    "exclude": [
-      "tests/**",
-      "docs/**"
+    "all": true,
+    "include": [
+      "src/**",
+      "!src/types.ts"
     ]
   },
   "eslintConfig": {
