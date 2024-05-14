@@ -1,7 +1,7 @@
 {
   "name": "@nulix/adonis-2fa",
   "description": "A Two Factor Authentication Helper for AdonisJS",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": ">=18.16.0"
   },
