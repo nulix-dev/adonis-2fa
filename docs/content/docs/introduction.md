@@ -4,7 +4,7 @@ summary: Adonis-2FA is a library for managing Two Factor Authentication in your 
 
 # Introduction
 
-Adonis-2FA is a library for managing Two Factor Authentication in your AdonisJS project build on top of [node-2fa](https://github.com/jeremyscalpello/node-2fa).
+Adonis-2FA is a library for managing Two Factor Authentication in your AdonisJS project build on top of [2fa-node](https://github.com/FinotiLucas/2fa-node).
 
 The package it self does not store any secret or data on your behalf. It only give you access the methods to implement a two factor authentication flow and create recovery codes. You can store that information inside a database and use the [auth](https://docs.adonisjs.com/guides/auth) package to login the user within your application.
 

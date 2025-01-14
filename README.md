@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Two Factor Authentication using `node-2fa` integration for AdonisJS.
+Two Factor Authentication using `2fa-node` integration for AdonisJS.
 
 ## Documentation
 

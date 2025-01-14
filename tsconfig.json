@@ -1,10 +1,10 @@
 {
   "extends": "@adonisjs/tsconfig/tsconfig.package.json",
   "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "nodenext",
     "rootDir": "./",
-    "outDir": "./build",
+    "outDir": "./build"
   },
-  "exclude": [
-    "docs"
-  ]
+  "exclude": ["docs"]
 }

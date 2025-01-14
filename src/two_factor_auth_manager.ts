@@ -1,4 +1,4 @@
-import * as twoFactor from 'node-2fa'
+import * as twoFactor from '2fa-node'
 
 import { ResolvedTwoFactorAuthConfig, TwoFactorSecret } from './types.js'
 import { randomInt } from 'node:crypto'
@@ -9,10 +9,11 @@ export class TwoFactorAuthManager {
   /**
    * Generate a `Secret` to the given user information
    */
-  generateSecret(userInfo: string): TwoFactorSecret {
-    return twoFactor.generateSecret({
+  async generateSecret(userInfo: string): Promise<TwoFactorSecret> {
+    return await twoFactor.generateSecret({
       name: this.config.issuer,
       account: userInfo,
+      counter: undefined,
     })
   }
 
@@ -29,13 +30,15 @@ export class TwoFactorAuthManager {
    */
   verifyToken(secret: string = '', token: string, recoveryCodes: string[] = []) {
     const verifyResult = twoFactor.verifyToken(secret, token)
+
     if (!verifyResult) {
       const isSecretInRecoveryCodes = recoveryCodes.includes(token)
 
       return isSecretInRecoveryCodes
     }
 
-    return verifyResult.delta === 0 // Valida token atual, não permitindo token já expirado ou token futuro
+    return verifyResult
+    // Valida token atual, não permitindo token já expirado ou token futuro
   }
 
   /**
