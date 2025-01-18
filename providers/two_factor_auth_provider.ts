@@ -27,6 +27,7 @@ export default class TwoFactorAuthProvider {
       /**
        * Resolve config from the provider
        */
+      // eslint-disable-next-line  @typescript-eslint/no-explicit-any
       const config = await configProvider.resolve<any>(this.app, twoFactorConfigProvider)
       if (!config) {
         throw new RuntimeException(

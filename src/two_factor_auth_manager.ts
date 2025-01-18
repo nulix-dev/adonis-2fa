@@ -38,7 +38,6 @@ export class TwoFactorAuthManager {
     }
 
     return verifyResult
-    // Valida token atual, não permitindo token já expirado ou token futuro
   }
 
   /**
