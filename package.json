@@ -26,7 +26,7 @@
     "clean": "del-cli build",
     "copy:templates": "copyfiles \"stubs/**/*.stub\" build",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --ext=.ts",
+    "lint": "eslint --fix",
     "format": "prettier --write .",
     "test": "node --import=./tsnode.esm.js --enable-source-maps bin/test.ts",
     "prec8:test": "npm run lint",
@@ -38,35 +38,49 @@
     "version": "npm run build",
     "prepublishOnly": "npm run build"
   },
+  "devDependencies": {
+    "@adonisjs/assembler": "^7.8.2",
+    "@adonisjs/core": "^6.17.1",
+    "@adonisjs/eslint-config": "^1.3.0",
+    "@adonisjs/prettier-config": "^1.4.0",
+    "@adonisjs/tsconfig": "^1.4.0",
+    "@eslint/js": "^9.18.0",
+    "@japa/assert": "^4.0.1",
+    "@japa/runner": "^4.1.0",
+    "@swc/core": "^1.10.7",
+    "@types/node": "^22.10.7",
+    "c8": "^10.1.3",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^6.0.0",
+    "eslint": "^9.18.0",
+    "np": "^10.1.0",
+    "prettier": "^3.4.2",
+    "prettier-edgejs": "^0.2.34",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
+  },
+  "dependencies": {
+    "2fa-node": "^0.0.5"
+  },
+  "peerDependencies": {
+    "@adonisjs/core": "^6.2.0"
+  },
+  "author": "brunolipe-a, nulix",
+  "license": "MIT",
   "keywords": [
     "adonisjs",
     "2fa",
     "adonis"
   ],
-  "author": "brunolipe-a, nulix",
-  "license": "MIT",
-  "devDependencies": {
-    "@adonisjs/assembler": "^7.0.0",
-    "@adonisjs/core": "^6.2.0",
-    "@adonisjs/eslint-config": "^1.2.1",
-    "@adonisjs/prettier-config": "^1.2.1",
-    "@adonisjs/tsconfig": "^1.2.1",
-    "@japa/assert": "^2.1.0",
-    "@japa/runner": "^3.1.1",
-    "@swc/core": "^1.3.102",
-    "@types/node": "^20.10.7",
-    "c8": "^9.0.0",
-    "copyfiles": "^2.4.1",
-    "del-cli": "^5.0.0",
-    "eslint": "^8.38.0",
-    "np": "^9.2.0",
-    "prettier": "^3.1.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+  "types": "module",
+  "eslintConfig": {
+    "extends": "@adonisjs/eslint-config/package",
+    "ignorePatterns": [
+      "docs/"
+    ]
   },
-  "peerDependencies": {
-    "@adonisjs/core": "^6.2.0"
-  },
+  "prettier": "@adonisjs/prettier-config",
   "publishConfig": {
     "access": "public",
     "tag": "latest"
@@ -87,15 +101,5 @@
       "src/**",
       "!src/types.ts"
     ]
-  },
-  "eslintConfig": {
-    "extends": "@adonisjs/eslint-config/package",
-    "ignorePatterns": [
-      "docs/"
-    ]
-  },
-  "prettier": "@adonisjs/prettier-config",
-  "dependencies": {
-    "node-2fa": "^2.0.3"
   }
 }

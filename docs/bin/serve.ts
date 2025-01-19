@@ -57,7 +57,7 @@ async function defineRoutes(app: ApplicationService) {
       return response.redirect(redirectsCollection[request.url()])
     }
 
-    for (let collection of collections) {
+    for (const collection of collections) {
       await collection.refresh()
       const entry = collection.findByPermalink(request.url())
       if (entry) {

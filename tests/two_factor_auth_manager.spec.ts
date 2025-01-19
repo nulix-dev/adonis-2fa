@@ -9,7 +9,7 @@ test.group('TwoFactorAuthManager', () => {
     const email = 'johndoe@test.com'
     const manager = new TwoFactorAuthManager({ issuer })
 
-    const twoFactorSecret = manager.generateSecret(email)
+    const twoFactorSecret = await manager.generateSecret(email)
 
     assert.properties(twoFactorSecret, ['secret', 'uri', 'qr'])
     assert.equal(twoFactorSecret.secret.length, 32)
@@ -46,7 +46,7 @@ test.group('TwoFactorAuthManager', () => {
   test('it should be able to verify a valid secret and OTP', async ({ assert }) => {
     const manager = new TwoFactorAuthManager({ issuer })
 
-    const { secret } = manager.generateSecret('any')
+    const { secret } = await manager.generateSecret('any')
 
     const token = manager.generateToken(secret)!
 
@@ -58,7 +58,7 @@ test.group('TwoFactorAuthManager', () => {
   test('it not should be able to verify a valid secret and invalid OTP', async ({ assert }) => {
     const manager = new TwoFactorAuthManager({ issuer })
 
-    const { secret } = manager.generateSecret('any')
+    const { secret } = await manager.generateSecret('any')
 
     const isValid = manager.verifyToken(secret, 'something')
 
@@ -68,7 +68,7 @@ test.group('TwoFactorAuthManager', () => {
   test('it not should be able to verify a invalid secret and valid OTP', async ({ assert }) => {
     const manager = new TwoFactorAuthManager({ issuer })
 
-    const { secret } = manager.generateSecret('any')
+    const { secret } = await manager.generateSecret('any')
 
     const token = manager.generateToken(secret)!
 
