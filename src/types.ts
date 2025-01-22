@@ -15,7 +15,7 @@ export type ResolvedTwoFactorAuthConfig = {
    * The size of the recovery code.
    *
    * @type {number}
-   * @default 32
+   * @default 16
    */
   recoveryCodeSize: number
 
