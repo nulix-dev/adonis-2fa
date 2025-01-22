@@ -61,7 +61,7 @@
     "typescript-eslint": "^8.20.0"
   },
   "dependencies": {
-    "2fa-node": "^0.0.5"
+    "2fa-node": "^0.0.6"
   },
   "peerDependencies": {
     "@adonisjs/core": "^6.2.0"

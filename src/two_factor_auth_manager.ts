@@ -1,5 +1,4 @@
 import * as twoFactor from '2fa-node'
-
 import { ResolvedTwoFactorAuthConfig, TwoFactorSecret } from './types.js'
 import { randomInt } from 'node:crypto'
 
@@ -14,30 +13,37 @@ export class TwoFactorAuthManager {
       name: this.config.issuer,
       account: userInfo,
       counter: undefined,
+      numberOfSecretBytes: this.config.numberOfSecretBytes,
     })
   }
 
   /**
    * Generate `n` recovery codes
    */
-  generateRecoveryCodes(n = 16) {
-    return Array.from({ length: n }, () => this.generateRecoveryCode(10))
+  generateRecoveryCodes(n?: number) {
+    const length = n || this.config.recoveryCodesLength
+    return Array.from({ length: length }, () =>
+      this.generateRecoveryCode(this.config.recoveryCodeSize)
+    )
   }
 
   /**
    * Verify if the OTP (One-Time password) is
    * valid to the user `secret`, or if the `recovery codes` includes the `otp`.
    */
-  verifyToken(secret: string = '', token: string, recoveryCodes: string[] = []) {
+  verifyToken(secret: string = '', token: string, recoveryCodes: string[] = []): boolean[] {
     const verifyResult = twoFactor.verifyToken(secret, token)
-
     if (!verifyResult) {
-      const isSecretInRecoveryCodes = recoveryCodes.includes(token)
-
-      return isSecretInRecoveryCodes
+      return [false, this.isTokenInRecoveryCodes(recoveryCodes, token)]
     }
+    return [true, false]
+  }
 
-    return verifyResult
+  /**
+   * Check if a token one of the recovery tokens
+   */
+  private isTokenInRecoveryCodes(recoveryCodes: string[], token: string) {
+    return recoveryCodes.includes(token)
   }
 
   /**
