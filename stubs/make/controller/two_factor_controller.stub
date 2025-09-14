@@ -12,7 +12,7 @@ export default class TwoFactorAuthController {
   async generate({ auth }: HttpContext) {
     const user = auth.user!
 
-    user.twoFactorSecret = twoFactorAuth.generateSecret(user.email)
+    user.twoFactorSecret = await twoFactorAuth.generateSecret(user.email)
     user.isTwoFactorEnabled = false
 
     await user.save()
